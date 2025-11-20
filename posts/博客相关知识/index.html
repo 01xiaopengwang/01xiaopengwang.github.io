@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>博客相关知识 | XP的小天地</title>
+<meta name="keywords" content="">
+<meta name="description" content="hugo.toml 是 Hugo 静态网站生成器的主配置文件，它负责定义网站的所有核心设置和行为。
+🎯 主要作用
+1. 网站基本信息配置
+baseURL = &#39;https://01xiaopengwang.github.io/&#39;
+languageCode = &#39;zh-cn&#39;
+title = &#39;XP的小天地&#39;
+theme = &#39;PaperMod&#39;
+
+设置网站域名、语言、标题和使用的主题
+
+2. 构建和输出设置
+# 分页设置
+[pagination]
+  pagerSize = 10
+
+# 功能开关
+enableEmoji = true
+pygmentsCodeFences = true
+
+控制网站如何构建和生成
+启用或禁用各种功能
+
+3. 主题参数定制
+[params]
+  description = &#34;欢迎来到我的个人博客&#34;
+  author = &#34;XP&#34;
+  
+  [params.homeInfoParams]
+    Title = &#34;欢迎来到XP的小天地&#34;
+    Content = &#34;这里记录我的学习笔记和思考&#34;
+
+传递参数给主题，自定义主题的外观和行为
+
+4. 菜单和导航
+[menu]
+  [[menu.main]]
+    identifier = &#34;posts&#34;
+    name = &#34;文章&#34;
+    url = &#34;/posts/&#34;
+    weight = 10
+
+定义网站的导航菜单结构
+
+📁 配置文件格式演变
+Hugo 支持多种配置文件格式：">
+<meta name="author" content="XP">
+<link rel="canonical" href="https://01xiaopengwang.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://01xiaopengwang.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://01xiaopengwang.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://01xiaopengwang.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://01xiaopengwang.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://01xiaopengwang.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://01xiaopengwang.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://01xiaopengwang.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/">
+  <meta property="og:site_name" content="XP的小天地">
+  <meta property="og:title" content="博客相关知识">
+  <meta property="og:description" content="hugo.toml 是 Hugo 静态网站生成器的主配置文件，它负责定义网站的所有核心设置和行为。
+🎯 主要作用 1. 网站基本信息配置 baseURL = &#39;https://01xiaopengwang.github.io/&#39; languageCode = &#39;zh-cn&#39; title = &#39;XP的小天地&#39; theme = &#39;PaperMod&#39; 设置网站域名、语言、标题和使用的主题 2. 构建和输出设置 # 分页设置 [pagination] pagerSize = 10 # 功能开关 enableEmoji = true pygmentsCodeFences = true 控制网站如何构建和生成 启用或禁用各种功能 3. 主题参数定制 [params] description = &#34;欢迎来到我的个人博客&#34; author = &#34;XP&#34; [params.homeInfoParams] Title = &#34;欢迎来到XP的小天地&#34; Content = &#34;这里记录我的学习笔记和思考&#34; 传递参数给主题，自定义主题的外观和行为 4. 菜单和导航 [menu] [[menu.main]] identifier = &#34;posts&#34; name = &#34;文章&#34; url = &#34;/posts/&#34; weight = 10 定义网站的导航菜单结构 📁 配置文件格式演变 Hugo 支持多种配置文件格式：">
+  <meta property="og:locale" content="zh-CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-11-17T19:27:56+08:00">
+    <meta property="article:modified_time" content="2025-11-17T19:27:56+08:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="博客相关知识">
+<meta name="twitter:description" content="hugo.toml 是 Hugo 静态网站生成器的主配置文件，它负责定义网站的所有核心设置和行为。
+🎯 主要作用
+1. 网站基本信息配置
+baseURL = &#39;https://01xiaopengwang.github.io/&#39;
+languageCode = &#39;zh-cn&#39;
+title = &#39;XP的小天地&#39;
+theme = &#39;PaperMod&#39;
+
+设置网站域名、语言、标题和使用的主题
+
+2. 构建和输出设置
+# 分页设置
+[pagination]
+  pagerSize = 10
+
+# 功能开关
+enableEmoji = true
+pygmentsCodeFences = true
+
+控制网站如何构建和生成
+启用或禁用各种功能
+
+3. 主题参数定制
+[params]
+  description = &#34;欢迎来到我的个人博客&#34;
+  author = &#34;XP&#34;
+  
+  [params.homeInfoParams]
+    Title = &#34;欢迎来到XP的小天地&#34;
+    Content = &#34;这里记录我的学习笔记和思考&#34;
+
+传递参数给主题，自定义主题的外观和行为
+
+4. 菜单和导航
+[menu]
+  [[menu.main]]
+    identifier = &#34;posts&#34;
+    name = &#34;文章&#34;
+    url = &#34;/posts/&#34;
+    weight = 10
+
+定义网站的导航菜单结构
+
+📁 配置文件格式演变
+Hugo 支持多种配置文件格式：">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章",
+      "item": "https://01xiaopengwang.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "博客相关知识",
+      "item": "https://01xiaopengwang.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "博客相关知识",
+  "name": "博客相关知识",
+  "description": "hugo.toml 是 Hugo 静态网站生成器的主配置文件，它负责定义网站的所有核心设置和行为。\n🎯 主要作用 1. 网站基本信息配置 baseURL = \u0026#39;https://01xiaopengwang.github.io/\u0026#39; languageCode = \u0026#39;zh-cn\u0026#39; title = \u0026#39;XP的小天地\u0026#39; theme = \u0026#39;PaperMod\u0026#39; 设置网站域名、语言、标题和使用的主题 2. 构建和输出设置 # 分页设置 [pagination] pagerSize = 10 # 功能开关 enableEmoji = true pygmentsCodeFences = true 控制网站如何构建和生成 启用或禁用各种功能 3. 主题参数定制 [params] description = \u0026#34;欢迎来到我的个人博客\u0026#34; author = \u0026#34;XP\u0026#34; [params.homeInfoParams] Title = \u0026#34;欢迎来到XP的小天地\u0026#34; Content = \u0026#34;这里记录我的学习笔记和思考\u0026#34; 传递参数给主题，自定义主题的外观和行为 4. 菜单和导航 [menu] [[menu.main]] identifier = \u0026#34;posts\u0026#34; name = \u0026#34;文章\u0026#34; url = \u0026#34;/posts/\u0026#34; weight = 10 定义网站的导航菜单结构 📁 配置文件格式演变 Hugo 支持多种配置文件格式：\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "hugo.toml 是 Hugo 静态网站生成器的主配置文件，它负责定义网站的所有核心设置和行为。\n🎯 主要作用 1. 网站基本信息配置 baseURL = 'https://01xiaopengwang.github.io/' languageCode = 'zh-cn' title = 'XP的小天地' theme = 'PaperMod' 设置网站域名、语言、标题和使用的主题 2. 构建和输出设置 # 分页设置 [pagination] pagerSize = 10 # 功能开关 enableEmoji = true pygmentsCodeFences = true 控制网站如何构建和生成 启用或禁用各种功能 3. 主题参数定制 [params] description = \"欢迎来到我的个人博客\" author = \"XP\" [params.homeInfoParams] Title = \"欢迎来到XP的小天地\" Content = \"这里记录我的学习笔记和思考\" 传递参数给主题，自定义主题的外观和行为 4. 菜单和导航 [menu] [[menu.main]] identifier = \"posts\" name = \"文章\" url = \"/posts/\" weight = 10 定义网站的导航菜单结构 📁 配置文件格式演变 Hugo 支持多种配置文件格式：\n格式 文件名 特点 TOML hugo.toml 当前默认格式，易于阅读 YAML hugo.yaml 层次结构清晰 JSON hugo.json 机器友好 从 Hugo 0.110.0 开始，hugo.toml 成为新的默认配置文件名，替代了之前的 config.toml。\n🔧 实际工作流程 启动时读取：运行 hugo server 或 hugo 时首先加载此文件 主题应用：根据 theme 设置加载对应主题 内容处理：按照配置规则处理所有内容文件 静态生成：生成最终的 HTML、CSS、JS 文件到 public 目录 💡 与相关文件的关系 archetypes/：定义新内容的模板（Front Matter） content/：存放实际的博客文章和页面 layouts/：自定义主题的布局文件 themes/：存放主题文件 public/：最终生成的静态网站文件 🎪 简单类比 可以把 hugo.toml 想象成：\n网站的\"大脑\" - 控制所有行为 建筑的\"蓝图\" - 定义网站结构 汽车的\"仪表盘\" - 设置各种参数 总结：hugo.toml 是 Hugo 网站的控制中心，所有重要的网站设置都在这里定义，它决定了网站的外观、功能和行为。\n",
+  "wordCount" : "138",
+  "inLanguage": "zh-cn",
+  "datePublished": "2025-11-17T19:27:56+08:00",
+  "dateModified": "2025-11-17T19:27:56+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "XP"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://01xiaopengwang.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "XP的小天地",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://01xiaopengwang.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://01xiaopengwang.github.io/" accesskey="h" title="XP的小天地 (Alt + H)">XP的小天地</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://01xiaopengwang.github.io/posts/" title="全部文章">
+                    <span>全部文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://01xiaopengwang.github.io/posts/sale/" title="销售知识笔记">
+                    <span>销售知识笔记</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://01xiaopengwang.github.io/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/01xiaopengwang" title="GitHub">
+                    <span>GitHub</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      博客相关知识
+    </h1>
+    <div class="post-meta"><span title='2025-11-17 19:27:56 +0800 CST'>November 17, 2025</span>&nbsp;·&nbsp;<span>XP</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p><code>hugo.toml</code> 是 Hugo 静态网站生成器的<strong>主配置文件</strong>，它负责定义网站的所有核心设置和行为。</p>
+<h2 id="-主要作用">🎯 主要作用<a hidden class="anchor" aria-hidden="true" href="#-主要作用">#</a></h2>
+<h3 id="1-网站基本信息配置">1. <strong>网站基本信息配置</strong><a hidden class="anchor" aria-hidden="true" href="#1-网站基本信息配置">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#39;https://01xiaopengwang.github.io/&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#39;zh-cn&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#39;XP的小天地&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#39;PaperMod&#39;</span>
+</span></span></code></pre></div><ul>
+<li>设置网站域名、语言、标题和使用的主题</li>
+</ul>
+<h3 id="2-构建和输出设置">2. <strong>构建和输出设置</strong><a hidden class="anchor" aria-hidden="true" href="#2-构建和输出设置">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#75715e"># 分页设置</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">pagination</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">pagerSize</span> = <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 功能开关</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enableEmoji</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">pygmentsCodeFences</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><ul>
+<li>控制网站如何构建和生成</li>
+<li>启用或禁用各种功能</li>
+</ul>
+<h3 id="3-主题参数定制">3. <strong>主题参数定制</strong><a hidden class="anchor" aria-hidden="true" href="#3-主题参数定制">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;欢迎来到我的个人博客&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">author</span> = <span style="color:#e6db74">&#34;XP&#34;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">homeInfoParams</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Title</span> = <span style="color:#e6db74">&#34;欢迎来到XP的小天地&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Content</span> = <span style="color:#e6db74">&#34;这里记录我的学习笔记和思考&#34;</span>
+</span></span></code></pre></div><ul>
+<li>传递参数给主题，自定义主题的外观和行为</li>
+</ul>
+<h3 id="4-菜单和导航">4. <strong>菜单和导航</strong><a hidden class="anchor" aria-hidden="true" href="#4-菜单和导航">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">menu</span>]
+</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;posts&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;文章&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/posts/&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">10</span>
+</span></span></code></pre></div><ul>
+<li>定义网站的导航菜单结构</li>
+</ul>
+<h2 id="-配置文件格式演变">📁 配置文件格式演变<a hidden class="anchor" aria-hidden="true" href="#-配置文件格式演变">#</a></h2>
+<p>Hugo 支持多种配置文件格式：</p>
+<table>
+  <thead>
+      <tr>
+          <th>格式</th>
+          <th>文件名</th>
+          <th>特点</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>TOML</strong></td>
+          <td><code>hugo.toml</code></td>
+          <td>当前默认格式，易于阅读</td>
+      </tr>
+      <tr>
+          <td>YAML</td>
+          <td><code>hugo.yaml</code></td>
+          <td>层次结构清晰</td>
+      </tr>
+      <tr>
+          <td>JSON</td>
+          <td><code>hugo.json</code></td>
+          <td>机器友好</td>
+      </tr>
+  </tbody>
+</table>
+<p>从 Hugo 0.110.0 开始，<code>hugo.toml</code> 成为新的默认配置文件名，替代了之前的 <code>config.toml</code>。</p>
+<h2 id="-实际工作流程">🔧 实际工作流程<a hidden class="anchor" aria-hidden="true" href="#-实际工作流程">#</a></h2>
+<ol>
+<li><strong>启动时读取</strong>：运行 <code>hugo server</code> 或 <code>hugo</code> 时首先加载此文件</li>
+<li><strong>主题应用</strong>：根据 <code>theme</code> 设置加载对应主题</li>
+<li><strong>内容处理</strong>：按照配置规则处理所有内容文件</li>
+<li><strong>静态生成</strong>：生成最终的 HTML、CSS、JS 文件到 <code>public</code> 目录</li>
+</ol>
+<h2 id="-与相关文件的关系">💡 与相关文件的关系<a hidden class="anchor" aria-hidden="true" href="#-与相关文件的关系">#</a></h2>
+<ul>
+<li><strong><code>archetypes/</code></strong>：定义新内容的模板（Front Matter）</li>
+<li><strong><code>content/</code></strong>：存放实际的博客文章和页面</li>
+<li><strong><code>layouts/</code></strong>：自定义主题的布局文件</li>
+<li><strong><code>themes/</code></strong>：存放主题文件</li>
+<li><strong><code>public/</code></strong>：最终生成的静态网站文件</li>
+</ul>
+<h2 id="-简单类比">🎪 简单类比<a hidden class="anchor" aria-hidden="true" href="#-简单类比">#</a></h2>
+<p>可以把 <code>hugo.toml</code> 想象成：</p>
+<ul>
+<li><strong>网站的&quot;大脑&quot;</strong> - 控制所有行为</li>
+<li><strong>建筑的&quot;蓝图&quot;</strong> - 定义网站结构</li>
+<li><strong>汽车的&quot;仪表盘&quot;</strong> - 设置各种参数</li>
+</ul>
+<p><strong>总结</strong>：<code>hugo.toml</code> 是 Hugo 网站的<strong>控制中心</strong>，所有重要的网站设置都在这里定义，它决定了网站的外观、功能和行为。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://01xiaopengwang.github.io/">XP的小天地</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>文章 on XP的小天地</title>
+    <link>https://01xiaopengwang.github.io/posts/</link>
+    <description>Recent content in 文章 on XP的小天地</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 18 Nov 2025 16:01:46 +0800</lastBuildDate>
+    <atom:link href="https://01xiaopengwang.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>推送本地博客到github</title>
+      <link>https://01xiaopengwang.github.io/posts/%E6%8E%A8%E9%80%81%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2%E5%88%B0github/</link>
+      <pubDate>Tue, 18 Nov 2025 16:01:46 +0800</pubDate>
+      <guid>https://01xiaopengwang.github.io/posts/%E6%8E%A8%E9%80%81%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2%E5%88%B0github/</guid>
+      <description>&lt;p&gt;很好！使用 SSH 链接更安全。让我们使用 SSH 链接来重置你的仓库：&lt;/p&gt;
+&lt;h2 id=&#34;-使用-ssh-链接重置仓库&#34;&gt;🔧 使用 SSH 链接重置仓库&lt;/h2&gt;
+&lt;p&gt;在 &lt;code&gt;public&lt;/code&gt; 目录中执行以下命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 1. 初始化 Git 仓库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 2. 添加 SSH 远程仓库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git remote add origin git@github.com:01xiaopengwang/01xiaopengwang.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 3. 添加所有文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 4. 提交更改&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;重置：只包含静态网站文件&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 5. 强制推送到远程仓库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push -f origin main
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-创建安全的-ssh-部署脚本&#34;&gt;🛡️ 创建安全的 SSH 部署脚本&lt;/h2&gt;
+&lt;p&gt;创建一个专门用于 SSH 部署的脚本 &lt;code&gt;deploy-ssh.sh&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;=== SSH 安全部署 ===&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd /Users/wangxiaopeng/desktop/XP-BLOG
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1. 生成静态网站...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rm -rf public
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2. 进入 public 目录...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd public
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;3. 初始化并设置 SSH 远程仓库...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git remote add origin git@github.com:01xiaopengwang/01xiaopengwang.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;4. 配置 Git 用户信息...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config user.name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;01xiaopengwang&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config user.email &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2191084274@qq.com&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;5. 创建 .gitignore 忽略系统文件...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat &amp;gt; .gitignore &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;&amp;lt; EOF
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.DS_Store
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;*.DS_Store
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;._*
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.Spotlight-V100
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.Trashes
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;ehthumbs.db
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Thumbs.db
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;6. 强制推送...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;SSH部署: &lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;date&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push -f origin main
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;✅ SSH 部署完成！&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;网站地址: https://01xiaopengwang.github.io&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;给脚本执行权限：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hugo配置文件</title>
+      <link>https://01xiaopengwang.github.io/posts/hugo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Mon, 17 Nov 2025 23:55:40 +0800</pubDate>
+      <guid>https://01xiaopengwang.github.io/posts/hugo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;baseURL&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;https://01xiaopengwang.github.io/&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;defaultContentLanguage&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;zh-cn&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;languageCode&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;zh-CN&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;title&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;XP的小天地&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;theme&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;PaperMod&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;pagination&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;pagerSize&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;enableEmoji&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;pygmentsCodeFences&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;params&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;description&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;欢迎来到我的个人博客&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;author&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;XP&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;search&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [&lt;span style=&#34;color:#a6e22e&#34;&gt;params&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;homeInfoParams&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;Title&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;欢迎来到XP的小天地&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;Content&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;这里记录我的学习笔记和思考&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [[&lt;span style=&#34;color:#a6e22e&#34;&gt;params&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;socialIcons&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;github&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://github.com/01xiaopengwang&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;menu&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [[&lt;span style=&#34;color:#a6e22e&#34;&gt;menu&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;identifier&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;posts&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;文章&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/posts/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;weight&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [[&lt;span style=&#34;color:#a6e22e&#34;&gt;menu&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;identifier&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;about&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;关于&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/about/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;weight&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [[&lt;span style=&#34;color:#a6e22e&#34;&gt;menu&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;identifier&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;github&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;GitHub&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://github.com/01xiaopengwang&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;weight&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>博客相关知识</title>
+      <link>https://01xiaopengwang.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 17 Nov 2025 19:27:56 +0800</pubDate>
+      <guid>https://01xiaopengwang.github.io/posts/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</guid>
+      <description>&lt;p&gt;&lt;code&gt;hugo.toml&lt;/code&gt; 是 Hugo 静态网站生成器的&lt;strong&gt;主配置文件&lt;/strong&gt;，它负责定义网站的所有核心设置和行为。&lt;/p&gt;
+&lt;h2 id=&#34;-主要作用&#34;&gt;🎯 主要作用&lt;/h2&gt;
+&lt;h3 id=&#34;1-网站基本信息配置&#34;&gt;1. &lt;strong&gt;网站基本信息配置&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;baseURL&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;https://01xiaopengwang.github.io/&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;languageCode&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;zh-cn&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;title&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;XP的小天地&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;theme&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;PaperMod&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;设置网站域名、语言、标题和使用的主题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-构建和输出设置&#34;&gt;2. &lt;strong&gt;构建和输出设置&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 分页设置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;pagination&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;pagerSize&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 功能开关&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;enableEmoji&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;pygmentsCodeFences&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;控制网站如何构建和生成&lt;/li&gt;
+&lt;li&gt;启用或禁用各种功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-主题参数定制&#34;&gt;3. &lt;strong&gt;主题参数定制&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;params&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;description&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;欢迎来到我的个人博客&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;author&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;XP&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [&lt;span style=&#34;color:#a6e22e&#34;&gt;params&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;homeInfoParams&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;Title&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;欢迎来到XP的小天地&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;Content&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;这里记录我的学习笔记和思考&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;传递参数给主题，自定义主题的外观和行为&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-菜单和导航&#34;&gt;4. &lt;strong&gt;菜单和导航&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;menu&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [[&lt;span style=&#34;color:#a6e22e&#34;&gt;menu&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;identifier&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;posts&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;文章&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/posts/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;weight&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;定义网站的导航菜单结构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-配置文件格式演变&#34;&gt;📁 配置文件格式演变&lt;/h2&gt;
+&lt;p&gt;Hugo 支持多种配置文件格式：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>强化学习知识</title>
+      <link>https://01xiaopengwang.github.io/posts/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 17 Nov 2025 10:26:09 +0800</pubDate>
+      <guid>https://01xiaopengwang.github.io/posts/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86/</guid>
+      <description>&lt;p&gt;定义：agent(智能体)通过与环境的交互来学习如何采取动作，以最大化长期累积的奖励&lt;/p&gt;
+&lt;p&gt;自我学习→→学习策略→→最大化奖励&lt;/p&gt;
+&lt;p&gt;优势：&lt;/p&gt;
+&lt;p&gt;1.无需先验知识&lt;/p&gt;
+&lt;p&gt;2.处理高维或者连续状态/动作空间&lt;/p&gt;
+&lt;p&gt;3.避免局部最优&lt;/p&gt;
+&lt;p&gt;智能体&lt;/p&gt;
+&lt;h1 id=&#34;智能体agent是强化学习系统中的决策者和学习者它可以做出决策和接受奖励信号一个强化学习系统里可以有一个或多个智能体我们并不需要对智能体本身进行建模只需要了解它在不同环境下可以做出的动作并接受奖励信号&#34;&gt;智能体(agent)是强化学习系统中的决策者和学习者，它可以做出决策和接受奖励信号。一个强化学习系统里可以有一个或多个智能体。我们并不需要对智能体本身进行建模，只需要了解它在不同环境下可以做出的动作，并接受奖励信号。&lt;/h1&gt;
+&lt;p&gt;环境&lt;/p&gt;
+&lt;h1 id=&#34;环境environment是强化系统中除智能体以外的所有事物它是智能体交互的对象环境本身可以是确定性的也可以是不确定性的环境可能是已知的也可能是未知的我们可以对环境建模也可以不对环境建模&#34;&gt;环境(environment)是强化系统中除智能体以外的所有事物，它是智能体交互的对象。环境本身可以是确定性的，也可以是不确定性的。环境可能是已知的，也可能是未知的。我们可以对环境建模，也可以不对环境建模。&lt;/h1&gt;
+&lt;p&gt;智能体和环境的交互&lt;/p&gt;
+&lt;p&gt;• 智能体观测环境，可以获得环境的观测(observation)，记为O；&lt;/p&gt;
+&lt;p&gt;• 智能体根据观测做出决策，决定要对环境施加的动作(action)，记为A；&lt;/p&gt;
+&lt;p&gt;• 环境受智能体动作的影响，改变自己的状态(state)，记为S，并给出奖励(reward)，记为R。&lt;/p&gt;
+&lt;p&gt;智能体通过观察环境得到观测和收到环境给的&lt;strong&gt;奖励&lt;/strong&gt;，再根据&lt;strong&gt;策略&lt;/strong&gt;（强化学习需要学习的）给出相应的决策，采取下一步的动作，下一步的动作又会产生新的环境，新的环境又会产生新的观测和奖励。我们可以把这一过程一个序列来表示。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ot→Rt→At→Ot+1→Rt+1→At+1&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>拥有自己的博客</title>
+      <link>https://01xiaopengwang.github.io/posts/%E6%8B%A5%E6%9C%89%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Mon, 17 Nov 2025 10:26:09 +0800</pubDate>
+      <guid>https://01xiaopengwang.github.io/posts/%E6%8B%A5%E6%9C%89%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;p&gt;我是&lt;strong&gt;XP&lt;/strong&gt;！
+谢谢大家！
+这是我的第一篇博客，感谢支持！&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

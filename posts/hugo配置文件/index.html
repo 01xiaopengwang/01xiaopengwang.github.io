@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Hugo配置文件 | XP的小天地</title>
+<meta name="keywords" content="">
+<meta name="description" content="baseURL = &#39;https://01xiaopengwang.github.io/&#39;
+defaultContentLanguage = &#34;zh-cn&#34;
+languageCode = &#34;zh-CN&#34;
+title = &#39;XP的小天地&#39;
+theme = &#39;PaperMod&#39;
+
+[pagination]
+  pagerSize = 10
+
+enableEmoji = true
+pygmentsCodeFences = true
+
+[params]
+  description = &#34;欢迎来到我的个人博客&#34;
+  author = &#34;XP&#34;
+  search = true
+  
+  [params.homeInfoParams]
+    Title = &#34;欢迎来到XP的小天地&#34;
+    Content = &#34;这里记录我的学习笔记和思考&#34;
+  
+ [[params.socialIcons]]
+    name = &#34;github&#34;
+    url = &#34;https://github.com/01xiaopengwang&#34; 
+
+[menu]
+  [[menu.main]]
+    identifier = &#34;posts&#34;
+    name = &#34;文章&#34;
+    url = &#34;/posts/&#34;
+    weight = 10
+
+  [[menu.main]]
+    identifier = &#34;about&#34;
+    name = &#34;关于&#34;
+    url = &#34;/about/&#34;
+    weight = 20
+  
+    [[menu.main]]
+    identifier = &#34;github&#34;
+    name = &#34;GitHub&#34;
+    url = &#34;https://github.com/01xiaopengwang&#34;
+    weight = 30
+">
+<meta name="author" content="XP">
+<link rel="canonical" href="https://01xiaopengwang.github.io/posts/hugo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://01xiaopengwang.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://01xiaopengwang.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://01xiaopengwang.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://01xiaopengwang.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://01xiaopengwang.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://01xiaopengwang.github.io/posts/hugo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://01xiaopengwang.github.io/posts/hugo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+  <meta property="og:site_name" content="XP的小天地">
+  <meta property="og:title" content="Hugo配置文件">
+  <meta property="og:description" content="baseURL = &#39;https://01xiaopengwang.github.io/&#39; defaultContentLanguage = &#34;zh-cn&#34; languageCode = &#34;zh-CN&#34; title = &#39;XP的小天地&#39; theme = &#39;PaperMod&#39; [pagination] pagerSize = 10 enableEmoji = true pygmentsCodeFences = true [params] description = &#34;欢迎来到我的个人博客&#34; author = &#34;XP&#34; search = true [params.homeInfoParams] Title = &#34;欢迎来到XP的小天地&#34; Content = &#34;这里记录我的学习笔记和思考&#34; [[params.socialIcons]] name = &#34;github&#34; url = &#34;https://github.com/01xiaopengwang&#34; [menu] [[menu.main]] identifier = &#34;posts&#34; name = &#34;文章&#34; url = &#34;/posts/&#34; weight = 10 [[menu.main]] identifier = &#34;about&#34; name = &#34;关于&#34; url = &#34;/about/&#34; weight = 20 [[menu.main]] identifier = &#34;github&#34; name = &#34;GitHub&#34; url = &#34;https://github.com/01xiaopengwang&#34; weight = 30 ">
+  <meta property="og:locale" content="zh-CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-11-17T23:55:40+08:00">
+    <meta property="article:modified_time" content="2025-11-17T23:55:40+08:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hugo配置文件">
+<meta name="twitter:description" content="baseURL = &#39;https://01xiaopengwang.github.io/&#39;
+defaultContentLanguage = &#34;zh-cn&#34;
+languageCode = &#34;zh-CN&#34;
+title = &#39;XP的小天地&#39;
+theme = &#39;PaperMod&#39;
+
+[pagination]
+  pagerSize = 10
+
+enableEmoji = true
+pygmentsCodeFences = true
+
+[params]
+  description = &#34;欢迎来到我的个人博客&#34;
+  author = &#34;XP&#34;
+  search = true
+  
+  [params.homeInfoParams]
+    Title = &#34;欢迎来到XP的小天地&#34;
+    Content = &#34;这里记录我的学习笔记和思考&#34;
+  
+ [[params.socialIcons]]
+    name = &#34;github&#34;
+    url = &#34;https://github.com/01xiaopengwang&#34; 
+
+[menu]
+  [[menu.main]]
+    identifier = &#34;posts&#34;
+    name = &#34;文章&#34;
+    url = &#34;/posts/&#34;
+    weight = 10
+
+  [[menu.main]]
+    identifier = &#34;about&#34;
+    name = &#34;关于&#34;
+    url = &#34;/about/&#34;
+    weight = 20
+  
+    [[menu.main]]
+    identifier = &#34;github&#34;
+    name = &#34;GitHub&#34;
+    url = &#34;https://github.com/01xiaopengwang&#34;
+    weight = 30
+">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章",
+      "item": "https://01xiaopengwang.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Hugo配置文件",
+      "item": "https://01xiaopengwang.github.io/posts/hugo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Hugo配置文件",
+  "name": "Hugo配置文件",
+  "description": "baseURL = \u0026#39;https://01xiaopengwang.github.io/\u0026#39; defaultContentLanguage = \u0026#34;zh-cn\u0026#34; languageCode = \u0026#34;zh-CN\u0026#34; title = \u0026#39;XP的小天地\u0026#39; theme = \u0026#39;PaperMod\u0026#39; [pagination] pagerSize = 10 enableEmoji = true pygmentsCodeFences = true [params] description = \u0026#34;欢迎来到我的个人博客\u0026#34; author = \u0026#34;XP\u0026#34; search = true [params.homeInfoParams] Title = \u0026#34;欢迎来到XP的小天地\u0026#34; Content = \u0026#34;这里记录我的学习笔记和思考\u0026#34; [[params.socialIcons]] name = \u0026#34;github\u0026#34; url = \u0026#34;https://github.com/01xiaopengwang\u0026#34; [menu] [[menu.main]] identifier = \u0026#34;posts\u0026#34; name = \u0026#34;文章\u0026#34; url = \u0026#34;/posts/\u0026#34; weight = 10 [[menu.main]] identifier = \u0026#34;about\u0026#34; name = \u0026#34;关于\u0026#34; url = \u0026#34;/about/\u0026#34; weight = 20 [[menu.main]] identifier = \u0026#34;github\u0026#34; name = \u0026#34;GitHub\u0026#34; url = \u0026#34;https://github.com/01xiaopengwang\u0026#34; weight = 30 ",
+  "keywords": [
+    
+  ],
+  "articleBody": "baseURL = 'https://01xiaopengwang.github.io/' defaultContentLanguage = \"zh-cn\" languageCode = \"zh-CN\" title = 'XP的小天地' theme = 'PaperMod' [pagination] pagerSize = 10 enableEmoji = true pygmentsCodeFences = true [params] description = \"欢迎来到我的个人博客\" author = \"XP\" search = true [params.homeInfoParams] Title = \"欢迎来到XP的小天地\" Content = \"这里记录我的学习笔记和思考\" [[params.socialIcons]] name = \"github\" url = \"https://github.com/01xiaopengwang\" [menu] [[menu.main]] identifier = \"posts\" name = \"文章\" url = \"/posts/\" weight = 10 [[menu.main]] identifier = \"about\" name = \"关于\" url = \"/about/\" weight = 20 [[menu.main]] identifier = \"github\" name = \"GitHub\" url = \"https://github.com/01xiaopengwang\" weight = 30 ",
+  "wordCount" : "89",
+  "inLanguage": "zh-cn",
+  "datePublished": "2025-11-17T23:55:40+08:00",
+  "dateModified": "2025-11-17T23:55:40+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "XP"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://01xiaopengwang.github.io/posts/hugo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "XP的小天地",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://01xiaopengwang.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://01xiaopengwang.github.io/" accesskey="h" title="XP的小天地 (Alt + H)">XP的小天地</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://01xiaopengwang.github.io/posts/" title="全部文章">
+                    <span>全部文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://01xiaopengwang.github.io/posts/sale/" title="销售知识笔记">
+                    <span>销售知识笔记</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://01xiaopengwang.github.io/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/01xiaopengwang" title="GitHub">
+                    <span>GitHub</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Hugo配置文件
+    </h1>
+    <div class="post-meta"><span title='2025-11-17 23:55:40 +0800 CST'>November 17, 2025</span>&nbsp;·&nbsp;<span>XP</span>
+
+</div>
+  </header> 
+  <div class="post-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#39;https://01xiaopengwang.github.io/&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">defaultContentLanguage</span> = <span style="color:#e6db74">&#34;zh-cn&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;zh-CN&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#39;XP的小天地&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#39;PaperMod&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">pagination</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">pagerSize</span> = <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enableEmoji</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">pygmentsCodeFences</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;欢迎来到我的个人博客&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">author</span> = <span style="color:#e6db74">&#34;XP&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">search</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">homeInfoParams</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Title</span> = <span style="color:#e6db74">&#34;欢迎来到XP的小天地&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Content</span> = <span style="color:#e6db74">&#34;这里记录我的学习笔记和思考&#34;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span> [[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">socialIcons</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;github&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;https://github.com/01xiaopengwang&#34;</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">menu</span>]
+</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;posts&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;文章&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/posts/&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;about&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;关于&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/about/&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;github&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;GitHub&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;https://github.com/01xiaopengwang&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">30</span>
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://01xiaopengwang.github.io/">XP的小天地</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

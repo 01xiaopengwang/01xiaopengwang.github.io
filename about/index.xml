@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>关于 on XP的小天地</title>
+    <link>https://01xiaopengwang.github.io/about/</link>
+    <description>Recent content in 关于 on XP的小天地</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 17 Nov 2025 16:56:19 +0800</lastBuildDate>
+    <atom:link href="https://01xiaopengwang.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于</title>
+      <link>https://01xiaopengwang.github.io/about/about/</link>
+      <pubDate>Mon, 17 Nov 2025 16:56:19 +0800</pubDate>
+      <guid>https://01xiaopengwang.github.io/about/about/</guid>
+      <description>&lt;p&gt;&lt;em&gt;本博客基于Hugo静态网站生成器，主题为PaperMod&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
